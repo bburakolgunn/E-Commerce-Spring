@@ -4,6 +4,7 @@ import demo.ecommercespring.business.abstracts.ProductService;
 import demo.ecommercespring.core.utilities.results.DataResult;
 import demo.ecommercespring.core.utilities.results.Result;
 import demo.ecommercespring.entities.concretes.Product;
+import demo.ecommercespring.entities.dtos.ProductWithCategoryDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -54,10 +55,15 @@ public class ProductsController {
             return this.productService.getAllSorted();
         }
 
+        @GetMapping("/getProductWithCategoryDetails")
+             public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+                return this.productService.getProductWithCategoryDetails();
+        }
 
 
 
-    }
+
+        }
 
 
 

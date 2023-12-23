@@ -3,6 +3,7 @@ package demo.ecommercespring.business.abstracts;
 import demo.ecommercespring.core.utilities.results.DataResult;
 import demo.ecommercespring.core.utilities.results.Result;
 import demo.ecommercespring.entities.concretes.Product;
+import demo.ecommercespring.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -30,6 +31,9 @@ public interface ProductService {
        DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
        DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+
+       DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
+
 
 
 }
