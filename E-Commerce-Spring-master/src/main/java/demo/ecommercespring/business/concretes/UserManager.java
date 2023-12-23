@@ -7,7 +7,9 @@ import demo.ecommercespring.core.utilities.results.Result;
 import demo.ecommercespring.core.utilities.results.SuccessDataResult;
 import demo.ecommercespring.core.utilities.results.SuccessResult;
 import demo.ecommercespring.dataAccess.abstracts.UserDao;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserManager implements UserService {
 
     private UserDao userDao;
@@ -25,6 +27,6 @@ public class UserManager implements UserService {
     @Override
     public DataResult<User> findByEmail(String email) {
         return new SuccessDataResult<User>
-                (this.userDao.finByEmail(email),"Kullanıcı bulundu");
+                (this.userDao.findByEmail(email),"Kullanıcı bulundu");
     }
 }

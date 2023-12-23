@@ -14,12 +14,15 @@ public class User {
     @Column(name="id")
     private int id;
 
-    @Column(name="email")
+
     @Email
     @NotBlank
     @NotNull
+    @Column(name="email")
     private String email;
 
+    @NotBlank
+    @NotNull
     @Column(name="password")
     private String password;
 
